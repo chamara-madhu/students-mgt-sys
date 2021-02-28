@@ -1,0 +1,93 @@
+.stats-sec .stat-card {
+  display: inline-block;
+  position: relative;
+  width: 15.65%;
+  margin: 0.5%;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 2px 5px -1px rgb(69 90 100 / 30%);
+  transition: box-shadow 0.2s ease-in-out;
+  border: 0px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.stats-sec .stat-card i {
+  font-size: 38px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #7a8aad;
+}
+
+.stats-sec .stat-card .count {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.stats-sec .stat-card .stat-name {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 0;
+  color: #7a8aad;
+}
+
+@media (max-width: 575px) {
+  .stats-sec .stat-card {
+    width: 48%;
+    margin: 1%;
+  }
+
+  .stats-sec .stat-card i {
+    font-size: 25px;
+  }
+
+  .stats-sec .stat-card .count {
+    font-size: 20px;
+  }
+
+  .stats-sec .stat-card .stat-name {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .stats-sec .stat-card {
+    width: 31.33%;
+    margin: 1%;
+  }
+
+  .stats-sec .stat-card i {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .stats-sec .stat-card {
+    width: 24%;
+    margin: 0.5%;
+  }
+
+  .stats-sec .stat-card i {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .stats-sec .stat-card {
+    width: 24%;
+    margin: 0.5%;
+  }
+
+  .stats-sec .stat-card i {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1440px) {
+  .stats-sec .stat-card i {
+    font-size: 32px;
+  }
+}

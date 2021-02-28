@@ -1,0 +1,70 @@
+.col-table {
+  width: 50%;
+  background: #fff;
+  margin-right: 1%;
+  height: fit-content;
+}
+
+.record-results {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0;
+  padding: 0 10px 7px 0px;
+}
+
+.charts-col {
+  width: 49%;
+}
+
+.subject-charts-col {
+  width: 24%;
+  margin: 0.5%;
+  background: #fff;
+}
+
+.table-heading {
+  text-align: center;
+  font-weight: 500;
+  color: #505768;
+  line-height: 1.5;
+  margin-top: 15px;
+}
+
+@media (max-width: 575px) {
+  .col-table {
+    width: 100%;
+    order: 2;
+  }
+
+  .charts-col {
+    width: 100%;
+    order: 1;
+  }
+
+  .subject-charts-col {
+    width: 100%;
+    margin: 1% 0.5%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .col-table {
+    width: 40%;
+  }
+
+  .charts-col {
+    width: 59%;
+  }
+
+  .subject-charts-col {
+    width: 48%;
+    margin: 1%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1224px) {
+  .subject-charts-col {
+    width: 32.33%;
+    margin: 0.5%;
+  }
+}

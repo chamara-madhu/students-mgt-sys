@@ -1,0 +1,47 @@
+.filter-row {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 35px;
+  background: #5c677d;
+  color: #fff;
+  padding: 10px;
+  border-radius: 0.25rem;
+}
+
+.filter-row .filter-col {
+  width: 24%;
+  margin: 0.5%;
+}
+
+.filter-row .filter-col select {
+  cursor: pointer;
+}
+
+.filter-row .filter-col label {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.reset-filter-btn {
+  display: block;
+  width: fit-content;
+  margin: auto;
+  font-size: 13px;
+  color: rgb(255 255 255);
+  font-weight: 300;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.reset-filter-btn:hover {
+  font-weight: 400;
+}
+
+@media (max-width: 575px) {
+  .filter-row .filter-col {
+    width: 48%;
+    margin: 1%;
+  }
+}
