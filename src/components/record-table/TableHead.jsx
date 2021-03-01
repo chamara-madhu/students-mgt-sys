@@ -4,7 +4,7 @@ function TableHead() {
   return (
     <thead>
       <tr>
-        <th style={{ verticalAlign: "middle" }}>Stud ID</th>
+        <th style={{ verticalAlign: "middle" }}>Student ID</th>
         <th style={{ verticalAlign: "middle" }}>Name</th>
         <th style={{ verticalAlign: "middle" }}>Subject</th>
         <th className="text-center" style={{ verticalAlign: "middle" }}>

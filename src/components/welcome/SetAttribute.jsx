@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 import LogoCol from "./LogoCol";
 
-function CommonLogin(props) {
+function SetAttribute(props) {
   const [form, setForm] = useState({
     studs: localStorage.getItem("nos") ? localStorage.getItem("nos") : 20,
     subjects: localStorage.getItem("nosub")
@@ -161,7 +161,7 @@ function CommonLogin(props) {
                   ""
                 ) : (
                   <span>
-                    GO <i class="fas fa-angle-right"></i>
+                    GO <i className="fas fa-angle-right"></i>
                   </span>
                 )}
               </button>
@@ -173,4 +173,4 @@ function CommonLogin(props) {
   );
 }
 
-export default withRouter(CommonLogin);
+export default withRouter(SetAttribute);

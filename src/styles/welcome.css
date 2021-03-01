@@ -34,21 +34,22 @@
   height: 100vh;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .logo-col {
     height: 150px;
   }
   .login-reg-col {
-    height: calc(100vh - 150px);
+    height: calc(110vh - 150px);
   }
   .logo-col .logo-back-div {
-    width: 150px;
+    width: 100%;
+    padding: 0 15px;
   }
 }
 
 @media (max-width: 350px) {
   .login-reg-col {
-    height: 100vh;
+    height: 130vh;
   }
 }
 
@@ -73,7 +74,7 @@
 
 .login-reg-container .records {
   text-align: center;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 500;
   color: #8d9ec1;
   letter-spacing: 0.7px;

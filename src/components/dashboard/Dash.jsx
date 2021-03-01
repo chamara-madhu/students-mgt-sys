@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Pagination from "@material-ui/lab/Pagination";
 
-import TableHead from "./TableHead";
-import ReviewTable from "./ReviewTable";
 import Filters from "./Filters";
-import Boxplot from "../charts/Boxplot";
-import Column from "../charts/Column";
-import LineChart from "../charts/LineChart";
+import Records from "../record-table/Records";
+import Performance from "../individual-performance/Performance";
 
 import "../../styles/dash.css";
 
@@ -168,7 +164,7 @@ function Dash() {
   const indexOfFirst = indexOfLast - itemsPerPage;
   const currentItems = filterBySubject.slice(indexOfFirst, indexOfLast);
 
-  return (
+  return records.length > 0 ? (
     <div className="content-col">
       <div className="container-fluid inner-content py-4">
         <p style={{ fontSize: 25, marginLeft: 5 }}>Dashboard</p>
@@ -197,86 +193,57 @@ function Dash() {
           resetFilters={resetFilters}
         />
 
-        <div className="row m-0 mt-5 mb-4">
-          <div className="col-table px-3 py-2 cus-border">
-            <p className="table-heading">Student Marks Table</p>
-            <p className="record-results">
-              {filterBySubject.length > 0
-                ? `Showing ${indexOfFirst + 1} - ${
-                    indexOfFirst + currentItems.length
-                  } of ${filterBySubject.length} records`
-                : "No Records."}
-            </p>
-
-            <table
-              className="table common-table review-table table-responsive border"
-              style={{ marginBottom: 0 }}
-            >
-              <TableHead />
-              <tbody style={{ fontSize: 14 }}>
-                <ReviewTable records={currentItems} />
-              </tbody>
-            </table>
-            {noOfPages > 1 && (
-              <div className="pagination-div">
-                <Pagination
-                  count={noOfPages}
-                  page={page}
-                  onChange={handlePagination}
-                  className="pagi"
-                />
-              </div>
-            )}
-          </div>
-          <div className="charts-col">
-            <div className="row m-0">
-              <div className="col p-2 bg-white cus-border">
-                <p className="table-heading">Student Marks for Subject(s)</p>
-                <Boxplot filterBySubject={filterBySubject} />
-              </div>
-            </div>
-            <div className="row m-0 my-3 ">
-              <div className="col p-2 bg-white cus-border">
-                <p className="table-heading">
-                  Student Marks for each Subject with Average
-                </p>
-                <Column filterBySubject={filterBySubject} records={records} />
-              </div>
-            </div>
-          </div>
-        </div>
+        <Records
+          filterBySubject={filterBySubject}
+          indexOfFirst={indexOfFirst}
+          currentItems={currentItems}
+          noOfPages={noOfPages}
+          page={page}
+          records={records}
+          handlePagination={handlePagination}
+        />
 
         {studId && studId !== "-- All --" && (
-          <>
-            <div className="row m-0 mb-3 ">
-              <div className="col p-0">
-                <p
-                  style={{
-                    fontSize: 20,
-                    marginLeft: 5,
-                    marginBottom: 5,
-                    textAlign: "center",
-                    fontWeight: 560,
-                  }}
-                >
-                  Individual Students Marks
-                </p>
-                <p className="text-center mb-0">(STUD ID : {studId})</p>
-              </div>
-            </div>
-            <div className="row m-0 mb-3 ">
-              {finalGroupsBySubjects.map((el, i) => (
-                <div className="subject-charts-col p-2 cus-border" key={i}>
-                  <LineChart
-                    finalGroupsBySubjects={el}
-                    title={el.subject}
-                    // color={getRandomColor()}
-                  />
-                </div>
-              ))}
-            </div>
-          </>
+          <Performance
+            studId={studId}
+            finalGroupsBySubjects={finalGroupsBySubjects}
+          />
+          // <>
+          //   <div className="row m-0 mb-3 ">
+          //     <div className="col p-0">
+          //       <p
+          //         style={{
+          //           fontSize: 20,
+          //           marginLeft: 5,
+          //           marginBottom: 5,
+          //           textAlign: "center",
+          //           fontWeight: 560,
+          //         }}
+          //       >
+          //         Individual Students Marks
+          //       </p>
+          //       <p className="text-center mb-0">(STUD ID : {studId})</p>
+          //     </div>
+          //   </div>
+          //   <div className="row m-0 mb-3 ">
+          //     {finalGroupsBySubjects.map((el, i) => (
+          //       <div className="subject-charts-col p-2 cus-border" key={i}>
+          //         <LineChart
+          //           finalGroupsBySubjects={el}
+          //           title={el.subject}
+          //           // color={getRandomColor()}
+          //         />
+          //       </div>
+          //     ))}
+          //   </div>
+          // </>
         )}
+      </div>
+    </div>
+  ) : (
+    <div className="page-loading">
+      <div className="spinner-border" role="status">
+        <span className="visually-hidden"></span>
       </div>
     </div>
   );
