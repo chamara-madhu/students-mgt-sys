@@ -68,6 +68,10 @@ function Column(props) {
       {
         categories: uniqueSubjects,
         crosshair: true,
+
+        title: {
+          text: "Subjects",
+        },
       },
     ],
     yAxis: [
