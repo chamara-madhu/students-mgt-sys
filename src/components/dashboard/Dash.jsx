@@ -167,7 +167,7 @@ function Dash() {
   return records.length > 0 ? (
     <div className="content-col">
       <div className="container-fluid inner-content py-4">
-        <p style={{ fontSize: 25, marginLeft: 5 }}>Dashboard</p>
+        <p style={{ fontSize: 25, marginLeft: 7 }}>Dashboard</p>
 
         <Stats
           records={records.length}

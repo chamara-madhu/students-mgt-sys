@@ -8,7 +8,7 @@ function Filters(props) {
       <div className="col p-0">
         <div className="form-row filter-row">
           <div className="filter-col">
-            <label>Stud ID</label>
+            <label>Student ID</label>
             <select
               className="form-control"
               name="studId"
